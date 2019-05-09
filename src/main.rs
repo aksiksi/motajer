@@ -1,11 +1,15 @@
-extern crate reqwest;
+use std::env;
 
-use std::collections::HashMap;
+mod stocks;
 
-fn main() -> Result<(), Box<std::error::Error>> {
-    let resp: HashMap<String, String> = reqwest::get("https://httpbin.org/ip")?
-        .json()?;
-    println!("{:#?}", resp);
-    println!("Done!");
-    Ok(())
+fn main() {
+    let symbol = "AAPL";
+    let api_key = env::var("ALPHAVANTAGE_API_KEY").unwrap();
+    let s = stocks::Stock {
+        ticker: symbol.to_string(),
+        api_key: api_key.clone(),
+    };
+    println!("{:#?}", s);
+
+    println!("Latest price for {0}: ${1}", symbol, s.get_price().unwrap());
 }

@@ -525,6 +525,7 @@ name = "motajer"
 version = "0.1.0"
 dependencies = [
  "reqwest 0.9.16 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_json 1.0.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
