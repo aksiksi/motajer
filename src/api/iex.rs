@@ -2,11 +2,11 @@ extern crate reqwest;
 extern crate serde;
 extern crate serde_json;
 
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize};
 
 use super::base::{Client, Quote};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Deserialize)]
 #[allow(non_snake_case)]
 struct IEXQuoteAPI {
     symbol: String,
