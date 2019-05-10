@@ -1,6 +1,6 @@
 # mtjr
 
-[![Build Status](https://travis-ci.com/aksiksi/motajer.svg?branch=master)](https://travis-ci.com/aksiksi/motajer)
+[![Build Status](https://travis-ci.org/aksiksi/mtjr.svg?branch=master)](https://travis-ci.org/aksiksi/mtjr)
 
 A simple algorithmic trader written in Rust.
 
