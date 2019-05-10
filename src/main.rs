@@ -1,15 +1,17 @@
 use std::env;
 
-mod stocks;
+mod api;
+
+use api::iex;
+use api::base::Client;
 
 fn main() {
     let symbol = "AAPL";
-    let api_key = env::var("ALPHAVANTAGE_API_KEY").unwrap();
-    let s = stocks::Stock {
-        ticker: symbol.to_string(),
-        api_key: api_key.clone(),
-    };
-    println!("{:#?}", s);
+    let api_key = env::var("IEXCLOUD_API_KEY").unwrap();
+    let iex_client = iex::IEXClient::new(api_key.as_str());
 
-    println!("Latest price for {0}: ${1}", symbol, s.get_price().unwrap());
+    println!("{:#?}", iex_client);
+
+    println!("Latest stock data for {0}: ${1:?}", symbol,
+             iex_client.get_quote(symbol).unwrap());
 }
