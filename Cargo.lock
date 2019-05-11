@@ -521,7 +521,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "motajer"
+name = "mtjr"
 version = "0.1.0"
 dependencies = [
  "reqwest 0.9.16 (registry+https://github.com/rust-lang/crates.io-index)",
